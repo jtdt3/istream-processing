@@ -87,6 +87,7 @@ int main() {
     cout << "string2 = " << string2 << endl;
 
     input.close();
+    
 
     return 0;
 }
