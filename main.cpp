@@ -15,7 +15,9 @@ using std::getline;
  * --> operator>>: http://cplusplus.com/reference/string/string/operator%3E%3E/
  *
  * 1. When does the getline function stop reading from the input stream?
+ * Until a delimitation character is found or a newline character
  * 2. When does the operator>> stop reading from the input stream?
+ * Until there is whitespace
  */
 
 int main() {
@@ -26,13 +28,14 @@ int main() {
      * --> The program should respond:
      *     Unable to open not-here.txt
      * --> 3. Any idea why the output is shown in a different color?
-     *
+     * To show there was an error
      * data.txt
      * 4. Was it able to open it? Any idea why?
-     *
+     * The file was not able to open and I think it is because we didn't include the data.txt file in our main
      * ../data.txt
      * This time the program must've been able to open the file
      * 5. Why do you think that is? A hint: where is the program running from?
+     * I think the ../ has something to do with including the data.txt file in the main
      */
 
     string filename;
@@ -53,6 +56,7 @@ int main() {
      * and then using the function getline
      * Notice the output. 
      * 6. Why do you think the output looks like that?
+     * The >> operator only foes until it sees whitespace, so it stops after the new line
      */
     input >> string1;
     getline(input, string2);
@@ -71,7 +75,10 @@ int main() {
      * Now the program is reading from the file but this time
      * first by using getline and then by using the stream operator >>
      * Is it different from the output you saw from the previous code?
+     * Yes, string 2 is now Amazing
      * 7. Why is that?
+     * By looking at it we switched the getline and >> operator, I think it is so that the getline
+     * takes everything from the first line and stops at the newline and the >> can take the second line
      */
     getline(input, string1);
     input >> string2;
